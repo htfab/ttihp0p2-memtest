@@ -32,24 +32,24 @@ pinout:
   ui[7]: "we"
 
   # Outputs
-  uo[0]: "data[0] out"
-  uo[1]: "data[1] out"
-  uo[2]: "data[2] out"
-  uo[3]: "data[3] out"
-  uo[4]: "data[4] out"
-  uo[5]: "data[5] out"
-  uo[6]: "data[6] out"
-  uo[7]: "data[7] out"
+  uo[0]: "data_out[0]"
+  uo[1]: "data_out[1]"
+  uo[2]: "data_out[2]"
+  uo[3]: "data_out[3]"
+  uo[4]: "data_out[4]"
+  uo[5]: "data_out[5]"
+  uo[6]: "data_out[6]"
+  uo[7]: "data_out[7]"
 
   # Bidirectional pins
-  uio[0]: "data[0] in"
-  uio[1]: "data[1] in"
-  uio[2]: "data[2] in"
-  uio[3]: "data[3] in"
-  uio[4]: "data[4] in"
-  uio[5]: "data[5] in"
-  uio[6]: "data[6] in"
-  uio[7]: "data[7] in"
+  uio[0]: "data_in[0] / data_out_next[0]"
+  uio[1]: "data_in[1] / data_out_next[1]"
+  uio[2]: "data_in[2] / data_out_next[2]"
+  uio[3]: "data_in[3] / data_out_next[3]"
+  uio[4]: "data_in[4] / data_out_next[4]"
+  uio[5]: "data_in[5] / data_out_next[5]"
+  uio[6]: "data_in[6] / data_out_next[6]"
+  uio[7]: "data_in[7] / data_out_next[7]"
 
 # Do not change!
 yaml_version: 6

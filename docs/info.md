@@ -9,12 +9,14 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+Implements a 32 byte memory.
+When `we` is high, `mem[addr]` is set to `data_in`.
+When `we` is low, `data_out` is set to `mem[addr]` and `data_out_next` is set to `mem[addr+1]`.
 
 ## How to test
 
-Explain how to use your project
+Either set the inputs manually and check the outputs or use the testbench from the `test` directory.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None
