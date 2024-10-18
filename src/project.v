@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_example (
+module tt_um_htfab_mem_test (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -16,12 +16,24 @@ module tt_um_example (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+wire we = ui_in[7];
+wire [4:0] addr = ui_in[4:0];
+wire [7:0] data = uio_in;
 
-  // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+reg [7:0] mem [31:0];
+
+always @(posedge clk) begin
+    if (we) begin
+        mem[addr] <= data;
+    end  
+end
+
+wire [4:0] addr_inc = addr + 1;
+
+assign uo_out = mem[addr];
+assign uio_out = we ? 8'b00000000 : mem[addr_inc];
+assign uio_oe = we ? 8'b00000000 : 8'b11111111;
+
+wire _unused = &{ena, rst_n, ui_in[6:5], 1'b0};
 
 endmodule
