@@ -11,9 +11,8 @@
 
   "//": "Here are some of the variables you may want to change:",
 
-  "PLACE_DENSITY": 0.84,
+  "PLACE_DENSITY": 0.81,
   "TNS_END_PERCENT": 100,
-  "MAX_ROUTING_LAYER": "Metal4",
 
   "//": "Configuration docs: https://openroad-flow-scripts.readthedocs.io/en/latest/user/FlowVariables.html",
 

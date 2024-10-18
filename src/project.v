@@ -17,10 +17,10 @@ module tt_um_htfab_mem_test (
 );
 
 wire we = ui_in[7];
-wire [4:0] addr = ui_in[4:0];
+wire [6:0] addr = ui_in[6:0];
 wire [7:0] data = uio_in;
 
-reg [7:0] mem [31:0];
+reg [7:0] mem [127:0];
 
 always @(posedge clk) begin
     if (we) begin
@@ -28,12 +28,12 @@ always @(posedge clk) begin
     end  
 end
 
-wire [4:0] addr_inc = addr + 1;
+wire [6:0] addr_inc = addr + 1;
 
 assign uo_out = mem[addr];
 assign uio_out = we ? 8'b00000000 : mem[addr_inc];
 assign uio_oe = we ? 8'b00000000 : 8'b11111111;
 
-wire _unused = &{ena, rst_n, ui_in[6:5], 1'b0};
+wire _unused = &{ena, rst_n, 1'b0};
 
 endmodule
