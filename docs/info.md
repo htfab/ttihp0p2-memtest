@@ -9,7 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Implements a 128 byte memory.
+Implements a 32 byte memory.
 When `we` is high, `mem[addr]` is set to `data_in`.
 When `we` is low, `data_out` is set to `mem[addr]` and `data_out_next` is set to `mem[addr+1]`.
 
